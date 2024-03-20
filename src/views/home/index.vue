@@ -1,6 +1,6 @@
 <template>
   <header-column></header-column>
-  <div class="container flex bg-slate-200">
+  <div class="con-box flex bg-slate-200">
     <left-column></left-column>
     <main-column></main-column>
     <right-column></right-column>
@@ -16,7 +16,7 @@ import HeaderColumn from './components/header-column.vue'
 </script>
 
 <style scoped lang='scss'>
-.container {
+.con-box {
   min-height: calc(100vh - 50px);
 }
 </style>

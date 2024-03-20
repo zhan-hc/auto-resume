@@ -1,5 +1,5 @@
-
 /** 生成拖拽元素的八个点 */
+
 export default function (option: any) {
   const pointList = ['t', 'r', 'b', 'l', 'lt', 'rt', 'lb', 'rb']
   const directionKey = {
@@ -23,33 +23,33 @@ export default function (option: any) {
 
     // 四个角的点
     if (point.length === 2) {
-        newLeft = hasL? 0 : width
-        newTop = hasT? 0 : height
+      newLeft = hasL? 0 : width
+      newTop = hasT? 0 : height
     } else {
-        // 上下两点的点，宽度居中
-        if (hasT || hasB) {
-            newLeft = width / 2
-            newTop = hasT? 0 : height
-        }
+      // 上下两点的点，宽度居中
+      if (hasT || hasB) {
+        newLeft = width / 2
+        newTop = hasT? 0 : height
+      }
 
-        // 左右两边的点，高度居中
-        if (hasL || hasR) {
-            newLeft = hasL? 0 : width
-            newTop = Math.floor(height / 2)
-        }
+      // 左右两边的点，高度居中
+      if (hasL || hasR) {
+        newLeft = hasL? 0 : width
+        newTop = Math.floor(height / 2)
+      }
     }
 
     const style = {
-        marginLeft: hasR? '-4px' : '-3px',
-        marginTop: '-3px',
-        left: `${newLeft}px`,
-        top: `${newTop}px`,
-        cursor: `${directionKey[point]}-resize`
-        // cursor: point.split('').reverse().map(m => directionKey[m]).join('') + '-resize',
+      marginLeft: hasR? '-4px' : '-3px',
+      marginTop: '-3px',
+      left: `${newLeft}px`,
+      top: `${newTop}px`,
+      cursor: `${directionKey[point]}-resize`
     }
 
     return style
   }
+
   return {
     pointList,
     getPointStyle
