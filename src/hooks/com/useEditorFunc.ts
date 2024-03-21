@@ -1,7 +1,7 @@
 import { storeToRefs } from 'pinia'
 import { ref, shallowRef } from 'vue'
 import { IDomEditor } from '@wangeditor/editor'
-import { editortExcludeKeys } from '@/dict/com'
+import { editorExcludeKeys, editorInsertKeys } from '@/dict/com'
 import { useDrawStore } from '@/stores/draw'
 export default function () {
   const editorRef = shallowRef()
@@ -11,7 +11,8 @@ export default function () {
   const curChangeHtml = ref('')
   const toolbarConfig = {
     // 不展示的菜单项
-    excludeKeys: editortExcludeKeys
+    excludeKeys: editorExcludeKeys,
+    insertKeys: editorInsertKeys 
   }
 
   const editorConfig = { placeholder: '请输入内容...' }

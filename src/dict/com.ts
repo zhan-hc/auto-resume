@@ -1,5 +1,11 @@
+export const COM_TYPE = {
+  FRAME: 'frame',
+  TEXT: 'text',
+  IMAGE: 'iamge'
+}
 
-export const editortExcludeKeys = [
+
+export const editorExcludeKeys = [
   'group-video',
   'group-image',
   'group-more-style',
@@ -22,3 +28,7 @@ export const editortExcludeKeys = [
   'justifyRight',
   'insertVideo'
 ]
+
+export const editorInsertKeys = {
+  keys: ['fontSize']
+}

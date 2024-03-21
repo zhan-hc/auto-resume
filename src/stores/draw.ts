@@ -7,6 +7,8 @@ export const useDrawStore = defineStore('draw', () => {
   const curDragCom = ref({})
   const curSelectId = ref('')
 
+  const curCom = computed(() => curDragCom.value)
+
   function updateComlist (comList) {
     comList.value = comList
   }
@@ -20,5 +22,5 @@ export const useDrawStore = defineStore('draw', () => {
     curSelectId.value = id
   }
 
-  return { comList, curDragCom, curSelectId, updateComlist, pushComlist, updateCurDragCom, updateCurSelectId }
+  return { comList, curCom, curDragCom, curSelectId, updateComlist, pushComlist, updateCurDragCom, updateCurSelectId }
 })

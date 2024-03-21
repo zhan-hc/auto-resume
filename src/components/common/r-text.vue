@@ -6,7 +6,7 @@
 </template>
 
 <script lang='ts' setup>
-/**框组件 */
+/**文本组件 */
 const props = defineProps({
   propValue: {
     type: String,

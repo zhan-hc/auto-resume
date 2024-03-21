@@ -5,7 +5,7 @@
 </template>
 
 <script lang='ts' setup>
-/**框组件 */
+/**边框组件 */
 const props = defineProps({
   comOpt: {
     type: Object,

@@ -2,33 +2,38 @@ import { markRaw } from 'vue'
 import RText from '@/components/common/r-text.vue'
 import RFrame from '@/components/common/r-frame.vue'
 import RImage from '@/components/common/r-image.vue'
+import Editor from '@/components/editor/editor.vue'
+import BorderDirection from '@/components/config/border/border-direction.vue'
+import ObjFit from '@/components/config/image/obj-fit.vue'
+import { COM_TYPE } from '@/dict/com'
 
-// 组件信息
-export const comMap = {
-  frame: {
-    key: 'frame',
+// 组件基本信息
+export const comBaseMap = {
+  [COM_TYPE.FRAME]: {
+    key: COM_TYPE.FRAME,
     label: '边框',
-    component: RFrame
+    component: markRaw(RFrame),
+    icon: 'icon-frame',
   },
-  text: {
-    key: 'text',
+  [COM_TYPE.TEXT]: {
+    key: COM_TYPE.TEXT,
     label: '文本',
-    component: RText
+    component: markRaw(RText),
+    icon: 'icon-text',
   },
-  image: {
-    key: 'image',
+  [COM_TYPE.IMAGE]: {
+    key: COM_TYPE.IMAGE,
     label: '图片',
-    component: RImage
+    component: markRaw(RImage),
+    icon: 'icon-img',
   }
 }
 
 // 组件demo列表
 export const COMOptionList = [
   {
-    component: markRaw(comMap.frame.component),
-    label: '边框',
+    ...comBaseMap[COM_TYPE.FRAME],
     propValue: '',
-    icon: 'icon-frame',
     animations: '', // 动画列表
     events: {}, // 事件列表
     style: {
@@ -40,10 +45,8 @@ export const COMOptionList = [
     }
   },
   {
-    component: markRaw(comMap.text.component),
-    label: '文本',
+    ...comBaseMap[COM_TYPE.TEXT],
     propValue: '这是文本组件',
-    icon: 'icon-text',
     animations: '', // 动画列表
     events: {}, // 事件列表
     style: {
@@ -56,10 +59,8 @@ export const COMOptionList = [
     }
   },
   {
-    component: markRaw(comMap.image.component),
-    label: '图片',
+    ...comBaseMap[COM_TYPE.IMAGE],
     propValue: 'https://qiniu-web-assets.dcloud.net.cn/unidoc/zh/icon.png?v=1556263038788',
-    icon: 'icon-img',
     animations: '', // 动画列表
     events: {}, // 事件列表
     style: {
@@ -74,9 +75,88 @@ export const COMOptionList = [
 ]
 
 // 配置属性
-export const optionAttr = {
-  [comMap.frame.key]: ['border', 'borderColor'],
-  [comMap.text.key]: ['color', 'fontWeight', 'fontSize'],
-  [comMap.image.key]: ['object-fit']
+export const comOption = {
+  [COM_TYPE.FRAME]:[
+    {
+      groupLabel: '边框',
+      groupOptions: [
+        {
+          label: '颜色',
+          type: '',
+          component: 'colorPicker',
+          value: '#000000',
+          class: 'option-color-picker'
+        },
+        {
+          label: '宽度',
+          type: 'input',
+          inputType: 'number',
+          value: 1,
+          class: 'option-border-width'
+        },
+        {
+          label: '方向',
+          type: '',
+          component: markRaw(BorderDirection),
+          inputType: '',
+          value: 'bottom',
+          class: 'option-cb-label'
+        },
+        // {
+        //   label: '样式',
+        //   type: '',
+        //   component: 'border-style',
+        //   inputType: '',
+        //   value: 'solid',
+        // }
+      ]
+    }
+  ],
+  [COM_TYPE.TEXT]: [
+    {
+      groupLabel: '富文本',
+      groupOptions: [
+        {
+          label: '',
+          type: '',
+          component: markRaw(Editor),
+          value: '',
+          class: ''
+        }
+      ]
+    }
+  ],
+  [COM_TYPE.IMAGE]: [
+    {
+      groupLabel: '边框',
+      groupOptions: [
+        {
+          label: '颜色',
+          type: '',
+          component: 'colorPicker',
+          value: '#000000',
+          class: 'option-color-picker'
+        },
+        {
+          label: '宽度',
+          type: 'input',
+          inputType: 'number',
+          value: 1,
+          class: 'option-border-width'
+        }
+      ]
+    },
+    {
+      groupLabel: '图像',
+      groupOptions: [
+        {
+          label: '模式',
+          type: '',
+          component:  markRaw(ObjFit),
+          value: 'cover',
+        }
+      ]
+    }
+  ]
 }
   

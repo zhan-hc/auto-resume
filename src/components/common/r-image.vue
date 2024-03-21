@@ -4,7 +4,7 @@
 </template>
 
 <script lang='ts' setup>
-/**框组件 */
+/**图片组件 */
 const props = defineProps({
   propValue: {
     type: String,
