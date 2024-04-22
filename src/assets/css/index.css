@@ -2,3 +2,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* 颜色选择器样式穿透 */
+.m-colorPicker .box,
+.m-colorPicker .box.open {
+  left: -200px !important;
+}
+
+.m-colorPicker {
+  border: 1px solid #000;
+  border-radius: 2px;
+}
+
+/* 滚动条配置 */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+
+ul {
+  list-style: disc;
+  margin: 10px 20px;
+}

@@ -1,8 +1,8 @@
 @font-face {
-  font-family: "iconfont"; /* Project id 4172182 */
-  src: url('iconfont.woff2?t=1709885696523') format('woff2'),
-       url('iconfont.woff?t=1709885696523') format('woff'),
-       url('iconfont.ttf?t=1709885696523') format('truetype');
+  font-family: "iconfont"; /* Project id 4468810 */
+  src: url('iconfont.woff2?t=1712806986632') format('woff2'),
+       url('iconfont.woff?t=1712806986632') format('woff'),
+       url('iconfont.ttf?t=1712806986632') format('truetype');
 }
 
 .iconfont {
@@ -13,16 +13,32 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-loading:before {
+  content: "\e608";
+}
+
+.icon-close:before {
+  content: "\e6bf";
+}
+
+.icon-frame:before {
+  content: "\e8df";
+}
+
+.icon-text:before {
+  content: "\e623";
+}
+
+.icon-img:before {
+  content: "\e602";
+}
+
 .icon-light:before {
   content: "\e6df";
 }
 
 .icon-dark:before {
   content: "\e8b1";
-}
-
-.icon-date:before {
-  content: "\e657";
 }
 
 .icon-search-solid:before {
@@ -37,32 +53,8 @@
   content: "\e751";
 }
 
-.icon-category:before {
-  content: "\ed97";
-}
-
-.icon-upvote:before {
-  content: "\e668";
-}
-
-.icon-view:before {
-  content: "\e869";
-}
-
-.icon-comment:before {
-  content: "\e634";
-}
-
 .icon-juejin:before {
   content: "\e60b";
-}
-
-.icon-home:before {
-  content: "\e6bb";
-}
-
-.icon-menu:before {
-  content: "\e6a2";
 }
 
 .icon-wechat:before {
@@ -71,9 +63,5 @@
 
 .icon-github:before {
   content: "\e632";
-}
-
-.icon-expand:before {
-  content: "\e615";
 }
 
