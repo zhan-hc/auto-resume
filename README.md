@@ -4,7 +4,7 @@
 
 ![demo](https://cdn.jsdelivr.net/gh/zhan-hc/image/resume/auto-resume.png)
 
-[在线体验链接](https://auto-resume.vercel.app/)
+[在线体验链接](http://rs.janus-c.top/)
 
 
 ```
